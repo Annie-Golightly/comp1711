@@ -29,6 +29,8 @@ int main()
             printf("Error: File could not be opened\n");
             return 1;
         }
+        // should put the tokenise record bit here
+        
 
         printf("A: View all your blood iron levels\n");                       // BRONZE
         printf("B: View your average blood iron level\n");                    // BRONZE
@@ -58,7 +60,7 @@ int main()
             {
                 // split up the line and store it in the right place
                 // using the & operator to pass in a pointer to the bloodIron so it stores it
-                tokeniseRecord(line, ",", daily_readings[counter].date, &daily_readings[counter].bloodIron);
+                tokeniseRecord(line, ",", daily_readings[counter].date, &daily_readings[counter].bloodIron); // don't need multiple tokenise records!!!!!!!!
                 counter++;
             }
             for (int i = 0; i < counter; i++)
@@ -75,7 +77,7 @@ int main()
             {
                 // split up the line and store it in the right place
                 // using the & operator to pass in a pointer to the bloodIron so it stores it
-                tokeniseRecord(line, ",", daily_readings[counter].date, &daily_readings[counter].bloodIron);
+                tokeniseRecord(line, ",", daily_readings[counter].date, &daily_readings[counter].bloodIron); //calls function from header file to update the struct of values
                 mean += daily_readings[counter].bloodIron;
                 counter++;
             }
